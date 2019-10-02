@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
+import StarshipPage from './pages/StarshipPage/StarshipPage';
 
 class App extends Component {
   state = {
     starships: []
   };
+
+  getStarship() {
+
+  }
 
   render() {
     return (
@@ -12,6 +17,9 @@ class App extends Component {
         <header className="App-header">
           STAR WARS STARSHIPS
         </header>
+        <StarshipPage />
+
+
       </div>
     );
   }
