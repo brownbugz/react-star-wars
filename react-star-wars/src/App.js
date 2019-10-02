@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import StarshipPage from './pages/StarshipPage/StarshipPage';
 
 class App extends Component {
@@ -19,7 +19,21 @@ class App extends Component {
           STAR WARS STARSHIPS
         </header>
         <Switch>
-          <StarshipPage />
+          <Route exact path="/" render={() => 
+            <>
+            {this.state.starships.map((starship, idx) =>
+              <Link>
+              {this.starship.name}
+              </Link>
+            )}
+            </>
+          }/>
+          <Route path="/starships/:idx" render={(props) =>
+          
+            <StarshipPage 
+              getStarship={this.getStarship}
+            />
+          }/>
         </Switch>
 
       </div>
