@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import {Switch} from 'react-router-dom';
 import StarshipPage from './pages/StarshipPage/StarshipPage';
 
 class App extends Component {
@@ -17,8 +18,9 @@ class App extends Component {
         <header className="App-header">
           STAR WARS STARSHIPS
         </header>
-        <StarshipPage />
-
+        <Switch>
+          <StarshipPage />
+        </Switch>
 
       </div>
     );
