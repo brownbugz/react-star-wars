@@ -20,17 +20,20 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path="/" render={() => 
-            <>
-            {this.state.starships.map((starship, idx) =>
-              <Link>
-              {this.starship.name}
-              </Link>
-            )}
-            </>
+            <section>
+              {this.state.starships.map((starship, idx) =>
+                <Link
+                  to={`/starship/${idx}`}
+                  key={starship.name}
+                >
+                {starship.name}
+                </Link>
+              )}
+            </section>
           }/>
-          <Route path="/starships/:idx" render={(props) =>
-          
-            <StarshipPage 
+          <Route path='/starships/:idx' render={(props) => 
+            <StarshipPage
+              {...props}
               getStarship={this.getStarship}
             />
           }/>
