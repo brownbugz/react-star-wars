@@ -5,13 +5,16 @@ const StarshipPage = (props) => {
 
     return (
         <div className="StarshipPage">
-
-            <h3>STARSHIP NAME: {starship.name}</h3>
-            <h3>STARSHIP MODEL: {starship.model}</h3>
-            
+            {starship ?
+                <div>
+                    <h3>STARSHIP NAME: {starship.name}</h3>
+                    <h3>STARSHIP MODEL: {starship.model}</h3>
+                </div>
+            :
+            <h4>Loading...</h4>
+            }
         </div>
     );
-
 };
 
 export default StarshipPage;
