@@ -7,8 +7,8 @@ class App extends Component {
     starships: []
   };
 
-  getStarship() {
-
+  getStarship(idx) {
+    return this.state.starships(idx);
   }
 
   render() {
