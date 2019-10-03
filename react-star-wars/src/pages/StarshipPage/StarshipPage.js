@@ -1,20 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './StarshipPage.css';
 
 const StarshipPage = (props) => {
-    var starship = props.getStarship(props.match.params.idx);
-
-    return (
-        <div className="StarshipPage">
-            {starship ?
-                <div>
-                    <h3>STARSHIP NAME: {starship.name}</h3>
-                    <h3>STARSHIP MODEL: {starship.model}</h3>
-                </div>
-            :
-            <h4>Loading...</h4>
-            }
+  
+  const starship = props.getStarship(props.match.params.idx);
+  
+  return (
+    <div className='StarshipPage'>
+      {starship ?
+        <div className='StarshipPage-starship'>
+          <span>NAME:</span>
+          <span>{starship.name}</span>
+          <span>MODEL:</span>
+          <span>{starship.model}</span>
+          <Link to='/'>RETURN</Link>
         </div>
-    );
+        :
+        <h3>Loading...</h3>
+      }
+    </div>
+  );
 };
 
 export default StarshipPage;
